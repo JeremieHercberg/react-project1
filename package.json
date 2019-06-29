@@ -1,0 +1,51 @@
+{
+  "name": "react-project1",
+  "version": "1.0.0",
+  "description": "Simple React App",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development parcel src/index.html --open",
+    "build": "NODE_ENV=production parcel build src/index.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeremieHercberg/react-project1.git"
+  },
+  "author": "Jeremie Hercberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeremieHercberg/react-project1/issues"
+  },
+  "homepage": "https://github.com/JeremieHercberg/react-project1#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "^2.7.0",
+    "lint-staged": "^8.2.1"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "last 2 version",
+    "maintained node versions",
+    "not dead"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+      "*.{js,jsx,css}": ["eslint --fix", "git add", "prettier --write"]
+    }
+  }
+}
