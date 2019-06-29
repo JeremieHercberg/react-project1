@@ -4,8 +4,8 @@
   "description": "Simple React App",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development parcel src/index.html --open",
-    "build": "NODE_ENV=production parcel build src/index.html --public-url ./"
+    "start": "NODE_ENV=development parcel ./src/index.html",
+    "build": "NODE_ENV=production parcel build ./src/index.html--public-url ./"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -45,7 +46,11 @@
       "pre-commit": "lint-staged"
     },
     "lint-staged": {
-      "*.{js,jsx,css}": ["eslint --fix", "git add", "prettier --write"]
+      "*.{js,jsx,css}": [
+        "eslint --fix",
+        "git add",
+        "prettier --write"
+      ]
     }
   }
 }
