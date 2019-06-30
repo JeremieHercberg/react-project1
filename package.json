@@ -52,13 +52,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    },
-    "lint-staged": {
-      "*.{js,jsx,css}": [
-        "eslint --fix",
-        "git add",
-        "prettier --write"
-      ]
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,css}": [
+      "eslint --fix",
+      "git add",
+      "prettier --write"
+    ]
   }
 }
