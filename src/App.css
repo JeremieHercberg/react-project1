@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(245, 243, 243);
+  height: 100%;
+}
+
+.global-container {
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}

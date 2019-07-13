@@ -1,10 +1,22 @@
-// // External
-// import React from "react";
+// External
+import React from "react";
 
-// const Users = () => {
+// Components
+import User from "../user/User";
 
-//   return
-//   <div></div>
-// }
+// CSS
+import "./Users.css";
 
-// export default Users;
+const Users = (props) => {
+  const { users } = props;
+  return (
+    <div className="users-container">
+      {props.users.map(user => (
+        <User key={user.id} user={user} />
+      ))}
+    </div>
+
+  )
+}
+
+export default Users;
