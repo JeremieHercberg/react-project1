@@ -41,7 +41,8 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "husky": "^2.7.0",
-    "lint-staged": "^8.2.1"
+    "lint-staged": "^8.2.1",
+    "lodash": "^4.17.14"
   },
   "browserslist": [
     "last 1 version",
