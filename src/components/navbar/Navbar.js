@@ -1,7 +1,7 @@
 // External
 import React from "react";
-import PropTypes from "prop-types";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+// import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 // CSS
 import "./Navbar.css";
 
@@ -10,9 +10,9 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar-container" >
-      <i className="fab fa-github"></i>
+      <i className="fab fa-github" />
       <h1>NAVBAR</h1>
-      <ul>
+      <ul className="navbar-links">
         <li>
           <Link to="/">Accueil</Link>
         </li>

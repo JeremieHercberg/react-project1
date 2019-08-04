@@ -8,9 +8,10 @@ import User from "../user/User";
 import "./Users.css";
 
 const Users = (props) => {
+  const { users } = props
   return (
     <div className="users-container">
-      {props.users.map(user => (
+      {users.map(user => (
         <User key={user.id} user={user} />
       ))}
     </div>

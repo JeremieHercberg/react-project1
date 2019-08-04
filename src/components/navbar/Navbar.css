@@ -1,10 +1,15 @@
 .navbar-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   height: 8rem;
   background-color: coral;
+}
+
+.navbar-links li {
+  color: #fff;
+  text-decoration: none;
 }
 
 .fab,

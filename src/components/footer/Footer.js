@@ -1,13 +1,13 @@
-//Ecternal
+// External
 import React from "react";
 
-//Css
+// CSS
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <div className="footer-container">
-      <h5 className="footer-title">Made with ❤️ and sweat</h5>
+      <h5 className="footer-title">Made with <span role="img" aria-label="heart emoji">️️❤️</span> and sweat</h5>
     </div>
   )
 }

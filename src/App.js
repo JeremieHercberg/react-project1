@@ -36,14 +36,14 @@ class App extends React.Component {
   clearUsers = () => { this.setState({ users: [] }) }
 
   setAlert = (msg) => {
-    this.setState({ alert: { msg: msg } })
+    this.setState({ alert: { msg } })
     setTimeout(() => this.setState({ alert: null }), 5000)
   }
 
   render() {
-    const { users, loading } = this.state
-    const isLoading = this.state.loading
-    const areUsersFilled = this.state.users.length > 0
+    const { users, loading, alert } = this.state
+    const isLoading = loading
+    const areUsersFilled = users.length > 0
 
     return (
       <React.Fragment>
@@ -53,7 +53,7 @@ class App extends React.Component {
           <div>
             <Router>
               <Navbar />
-              <Alert alert={this.state.alert} />
+              <Alert alert={alert} />
               <Switch>
                 <Route exact path="/" render={props => (
                   <React.Fragment>
@@ -67,12 +67,11 @@ class App extends React.Component {
                       <Users users={users} loading={loading} />
                     </div>
                   </React.Fragment>
-                )}>
-                </Route>
-                <Route exact path="/about" component={About}></Route>
+                )} />
+                <Route exact path="/about" component={About} />
               </Switch>
+              <Footer />
             </Router>
-            <Footer />
           </div>
         }
       </React.Fragment>

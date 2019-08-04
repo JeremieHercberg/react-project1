@@ -4,9 +4,14 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: rgb(245, 243, 243);
-  height: 100%;
+  flex-direction: column;
 }
 
 .global-container {

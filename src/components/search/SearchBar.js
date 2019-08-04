@@ -1,7 +1,7 @@
-//External
+// External
 import React from "react";
 
-//CSS
+// CSS
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
@@ -15,34 +15,36 @@ class SearchBar extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    if (this.state.text === "") {
-      this.props.setAlert("Tapez quelque chose dans la barre de recherche");
+    const { text } = this.state
+    const { setAlert, searchUsers } = this.props
+    if (text === "") {
+      setAlert("Tapez quelque chose dans la barre de recherche");
     } else {
-      this.props.searchUsers(this.state.text);
+      searchUsers(text);
       this.setState({ text: "" })
     }
   }
 
   render() {
     const { clearUsers, displayClearButton } = this.props
+    const { text } = this.state
     return (
       <div>
         <form onSubmit={this.onSubmit}>
           <input type="text"
             name="text"
             placeholder="Search Users...."
-            value={this.state.text}
+            value={text}
             onChange={this.onChange}
-          >
-          </input>
+          />
           <input
             type="submit"
-            value="Rechercher">
-          </input>
+            value="Rechercher"
+          />
         </form>
         {
           displayClearButton &&
-          <button onClick={clearUsers}>Recommencer</button>
+          <button type="button" onClick={clearUsers}>Recommencer</button>
         }
       </div>
     )

@@ -1,7 +1,7 @@
-//External
+// External
 import React from 'react';
 
-//CSS
+// CSS
 import "./Alert.css"
 
 const Alert = ({ alert }) => {
