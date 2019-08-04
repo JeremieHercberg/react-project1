@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Components
 import Navbar from "./components/navbar/Navbar";
 import Users from "./components/users/Users";
+import UserComponent from "./components/user-component/user-component"
 import Footer from "./components/footer/Footer";
 import Loader from "./components/loader/Loader";
 import SearchBar from "./components/search/SearchBar";
@@ -18,6 +19,7 @@ import "./App.css";
 class App extends React.Component {
   state = {
     users: [],
+    user: {},
     loading: false,
     alert: null
   }
@@ -33,6 +35,12 @@ class App extends React.Component {
     this.setState({ users: response.data.items, loading: false })
   }
 
+  getUser = async (userName) => {
+    // this.setState({ loading: true });
+    const response = await axios.get(`https://api.github.com/users/${userName}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
+    this.setState({ user: response.data, loading: false })
+  }
+
   clearUsers = () => { this.setState({ users: [] }) }
 
   setAlert = (msg) => {
@@ -41,7 +49,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { users, loading, alert } = this.state
+    const { users, user, loading, alert } = this.state
     const isLoading = loading
     const areUsersFilled = users.length > 0
 
@@ -69,6 +77,10 @@ class App extends React.Component {
                   </React.Fragment>
                 )} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/user/:login" render={props => (
+                  <UserComponent {...props} getUser={this.getUser} user={user} loading={isLoading} />
+                )
+                } />
               </Switch>
               <Footer />
             </Router>

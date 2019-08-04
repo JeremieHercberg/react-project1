@@ -1,6 +1,7 @@
 // External
 import React from "react";
 // import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // CSS
 import "./User.css";
@@ -14,6 +15,9 @@ const User = (props) => {
       <div className="user-infos-link">
         <button type="button">
           <a href={user.html_url}>Github Profile</a>
+        </button>
+        <button type="button">
+          <Link to={`/user/${user.login}`}> Click Me</Link>
         </button>
       </div>
     </div>
